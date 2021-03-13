@@ -4,9 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18" FontFamily="Segoe UI Light"
+        Title="HorseApp" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="36" Text="Hello Horseeeeeeeeeeeeeeeeeeeeeeeee" Grid.ColumnSpan="3" Margin="0,0,0,10" />
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="Bold" Text="First Name" FontFamily="Segoe UI"/>
+        <TextBox x:Name="firstNameText" Grid.Row="2" Grid.Column="2" Width="150"/>
+        <ComboBox x:Name="comboBox1" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Margin="10">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" MaxHeight="10" Source="C:\Users\Koen\Pictures\sam.png" Margin="0,5,10,0"></Image>
+                        <TextBlock Text="{Binding FirstName}"/>
+
+                        <TextBlock Text="/"/>
+                        <TextBlock Text="{Binding LastName}"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button x:Name="submitButton" Content="RunMe" Grid.Row="4" Grid.Column="1" Margin="10" Click="submitButton_Click"/>
+        <!--<Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Source="C:\Users\Koen\Pictures\sam.png"></Image>-->
+        <!--<MediaElement Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Source="C:\Users\Koen\Videos\2021-03-12 09-42-29.mkv"></MediaElement>-->
+        <ScrollViewer Grid.Row="1" Grid.Column="4" Grid.RowSpan="6">
+            <StackPanel Orientation="Vertical" >
+                <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" MaxWidth="200" Source="C:\Users\Koen\Pictures\sam.png"></Image>
+                <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" MaxWidth="200" Source="C:\Users\Koen\Pictures\sam.png"></Image>
+                <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" MaxWidth="200" Source="C:\Users\Koen\Pictures\sam.png"></Image>
+                <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" MaxWidth="200" Source="C:\Users\Koen\Pictures\sam.png"></Image>
+
+            </StackPanel>
+        </ScrollViewer>
+
+
     </Grid>
 </Window>

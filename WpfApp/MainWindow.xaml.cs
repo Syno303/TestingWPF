@@ -12,14 +12,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp.Classes;
 
 namespace WpfApp {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        internal List<Person> people = new List<Person>();
         public MainWindow() {
             InitializeComponent();
+            people.Add(new Person {
+                FirstName = "Koen",
+                LastName = "P"
+            }); people.Add(new Person {
+                FirstName = "Sam",
+                LastName = "B"
+            }); people.Add(new Person {
+                FirstName = "Okke",
+                LastName = "R"
+            });
+           comboBox1.ItemsSource = people;
+
+            
+        }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e) {
+            MessageBox.Show($"Hello Horse {firstNameText.Text}");
         }
     }
 }
