@@ -35,7 +35,7 @@
             <Button x:Name="btnRemove" Content="Remove" Margin="5,8" Command="{Binding Path=DeleteCommand}"/>
         </StackPanel>
         <TextBlock x:Name="txtMessage" Grid.Row="5" Grid.Column="1" Margin="5,8" Text="{Binding Path=Message}"/>
-        <DataGrid x:Name="dgEmployees" AutoGenerateColumns="False" Grid.Row="6" Grid.Column="1" Margin="5,8" ItemsSource="{Binding Path=Employees, Mode=TwoWay}" SelectedItem="{Binding SelectedItem}">
+        <DataGrid x:Name="dgEmployees" AutoGenerateColumns="False" Grid.Row="6" Grid.Column="1" Margin="5,8" ItemsSource="{Binding Path=Employees, Mode=TwoWay}" SelectedItem="{Binding CurrentEmployee}">
             <DataGrid.InputBindings>
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding Path=SearchCommand}"/>
             </DataGrid.InputBindings>
